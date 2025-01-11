@@ -1,6 +1,8 @@
 package com.empresa.miclima
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -85,6 +87,37 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart: La aplicación está visible")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume: La aplicación está en primer plano")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause: La aplicación ha sido pausada")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop: La aplicación ya no está visible")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy: La aplicación ha sido destruida")
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        Log.d(TAG, "onLowMemory: El sistema tiene poca memoria")
+    }
+
 }
 
 // Composable para mostrar la lista
